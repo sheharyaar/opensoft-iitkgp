@@ -1,0 +1,470 @@
+---
+swagger: "2.0"
+info:
+  description: "API definition for OpenSoft backend"
+  version: "1.0.0"
+  title: "OpenSoft"
+host: "localhost"
+basePath: "/v1"
+tags:
+- name: "customers"
+  description: "API related to customers"
+- name: "items"
+  description: "API related to items"
+- name: "stores"
+  description: "API related to stores"
+- name: "getOrders"
+  description: "API related to getting Orders"
+- name: "placeOrder"
+  description: "API related to placing Orders"
+schemes:
+- "https"
+paths:
+  /customers/AddCustomer:
+    post:
+      tags:
+      - "customers"
+      summary: "Add a new customer"
+      description: ""
+      operationId: "addCustomer"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Customer to add"
+        required: true
+        schema:
+          $ref: "#/definitions/Customers"
+        x-exportParamName: "Body"
+      security:
+      - customers_auth:
+        - "write:customers"
+        - "read:customers"
+      responses:
+        "200":
+          description: "Customer Added"
+        "400":
+          description: "Duplicate Entry"
+        "500":
+          description: "Database Connection Issue"
+          
+  /customers/Login:
+    post:
+      tags:
+      - "customers"
+      summary: "Add a new customer"
+      description: ""
+      operationId: "customerLogin"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Customer Verification for login"
+        required: true
+        schema:
+          type: "object"
+          required:
+          - "email"
+          - "password"
+          properties:
+            email:
+              type: "string"
+              example: "xyz@abc.com"
+            password:
+              type: "string"
+              format: "password"
+              example: "okserver"
+        x-exportParamName: "Body"
+      security:
+      - customers_auth:
+        - "write:customers"
+        - "read:customers"
+      responses:
+        "200":
+          description: "Customer Added"
+        "400":
+          description: "Duplicate Entry"
+        "500":
+          description: "Database Connection Issue"
+  /items/GetItemByName:
+    get:
+      tags:
+      - "items"
+      summary: "Retrieve items by name"
+      description: ""
+      operationId: "getItemsByName"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "name"
+        in: "query"
+        description: "items to be retrieved"
+        required: true
+        type: "string"
+        x-exportParamName: "Name"
+      responses:
+        "200":
+          description: "Items Found"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Items"
+        "400":
+          description: "Not found"
+        "500":
+          description: "Database Connection Issue"
+          
+  /items/GetItemById:
+    put:
+      tags:
+      - "items"
+      summary: "Retrieve item by Id"
+      description: ""
+      operationId: "getItemById"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          type: "object"
+          required:
+          - "item_id"
+          properties:
+            item_id:
+              type: "number"
+              format: "int64"
+              example: 12345
+        x-exportParamName: "Body"
+      responses:
+        "200":
+          description: "Items Found"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Items"
+        "500":
+          description: "Database Connection Issue"
+        "400":
+          description: "Item not found"
+  /stores/GetStores:
+    get:
+      tags:
+      - "stores"
+      summary: "Retrieve stores near address"
+      description: ""
+      operationId: "getStores"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "zipcode"
+        in: "query"
+        description: "items to be retrieved"
+        required: false
+        type: "integer"
+        format: "int64"
+        x-exportParamName: "Zipcode"
+        x-optionalDataType: "Int64"
+      - name: "city"
+        in: "query"
+        description: "items to be retrieved"
+        required: false
+        type: "string"
+        x-exportParamName: "City"
+        x-optionalDataType: "String"
+      - name: "state"
+        in: "query"
+        description: "items to be retrieved"
+        required: false
+        type: "string"
+        x-exportParamName: "State"
+        x-optionalDataType: "String"
+      responses:
+        "200":
+          description: "Stores Found"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Stores"
+        "500":
+          description: "Database Connection Issue"
+        "400":
+          description: "No Stores"
+  /orders/GetOrders:
+    post:
+      tags:
+      - "getOrders"
+      summary: "Extract orders"
+      description: ""
+      operationId: "getOrders"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Get Orders"
+        required: true
+        schema:
+          type: "object"
+          properties:
+            customer_id:
+              type: "integer"
+              format: "int32"
+              default: 0
+            order_id:
+              type: "integer"
+              format: "int32"
+              default: 0
+            
+        x-exportParamName: "Body"
+      security:
+      - customers_auth:
+        - "write:customers"
+        - "read:customers"
+      responses:
+        "200":
+          description: "Orders Found"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Orders"
+        "500":
+          description: "Database Connection Issue"
+        "400":
+          description: "Order not found"
+  /orders/PlaceOrder:
+    post:
+      tags:
+      - "placeOrder"
+      summary: "Place order"
+      description: ""
+      operationId: "placeOrder"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Place Order"
+        required: true
+        schema:
+          type: "object"
+          required:
+          - "customer_id"
+          - "OrderItems"
+          - "store_id"
+          properties:
+            store_id:
+              type: "integer"
+              format: "int64"
+            customer_id:
+              type: "integer"
+              format: "int64"
+            order_items: 
+              $ref: "#/definitions/OrderItems"
+        x-exportParamName: "Body"
+      security:
+      - customers_auth:
+        - "write:customers"
+        - "read:customers"
+      responses:
+        "200":
+          description: "Order Placed"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Orders"
+        "500":
+          description: "Database Conneciton Issue"
+        "400":
+          description: "Store Id does not exist"
+        "401":
+          description: "One of the order Item is not valid"
+securityDefinitions:
+  customers_auth:
+    type: "oauth2"
+    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      write:customers: "Modify customers"
+      read:customers: "Read your customers"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  Customers:
+    type: "object"
+    required:
+    - "street"
+    - "city"
+    - "state"
+    - "pincode"
+    - "customer_id"
+    - "email"
+    - "full_name"
+    - "password"
+    - "phone"
+    properties:
+      customer_id:
+        type: "integer"
+        format: "int64"
+        example: 0
+      full_name:
+        type: "string"
+        example: "example name"
+      phone:
+        type: "string"
+        example: "1234567890"
+      email:
+        type: "string"
+        example: "xyz@abc.com"
+      password:
+        type: "string"
+        format: "password"
+        example: "okserver"
+      street:
+        type: "string"
+        example: "exammple street"
+      city:
+        type: "string"
+        example: "Kharagpur"
+      state:
+        type: "string"
+        example: "West Bengal"
+      pincode:
+        type: "integer"
+        format: "int64"
+        example: 721302
+  Items:
+    type: "object"
+    properties:
+      item_id:
+        type: "integer"
+        format: "int64"
+        example: 100
+      name:
+        type: "string"
+        example: "Idli"
+      price:
+        type: "number"
+        format: "float"
+        example: 69.69
+    example:
+      item_id: 100
+      price: 69.68
+      name: "Idli"
+  Stores:
+    type: "object"
+    required:
+    - "street"
+    - "city"
+    - "state"
+    - "pincode"
+    - "store_id"
+    - "store_name"
+    properties:
+      store_id:
+        type: "integer"
+        format: "int64"
+        example: 0
+      store_name:
+        type: "string"
+        example: "example store"
+      street:
+        type: "string"
+        example: "example street"
+      city:
+        type: "string"
+        example: "Kharagpur"
+      state:
+        type: "string"
+        example: "West Bengal"
+      pincode:
+        type: "integer"
+        format: "int64"
+        example: 721302
+    example:
+      store_id: 0
+      pincode: 721302
+      street: "example street"
+      city: "Kharagpur"
+      state: "West Bengal"
+      store_name: "example store"
+      
+  OrderItems:
+    type: "array"
+    items: 
+      $ref: "#/definitions/Iteminput"
+      
+  Iteminput:
+    type: "object"
+    properties:
+      item_id:
+        type: "integer"
+        format: "int64"
+      quantity:
+        type: "integer"
+        format: "int64"
+    example:
+      item_id: 200
+      quantity: 2
+      
+  Orders:
+    type: "object"
+    properties:
+      item_id:
+        type: "integer"
+        format: "int64"
+      item_name:
+        type: "string"
+      quantity:
+        type: "integer"
+        format: "int64"
+      price:
+        type: "number"
+        format: "float32"
+      store_id:
+        type: "integer"
+        format: "int64"
+      order_id:
+        type: "integer"
+        format: "int64"
+      customer_id:
+        type: "integer"
+        format: "int64"
+      status:
+        type: "string"
+        enum:
+        - "Placed"
+        - "Accepted"
+        - "Completed"
+      order_date:
+        type: "string"
+        format: "date-time"
+    example:
+      store_id: 200
+      order_date: "2000-01-23T04:56:07.000+00:00"
+      customer_id: 5
+      item_id: 100
+      order_id: 1
+      quantity: 1
+      price: 3.25
+      item_name: "Idli"
+      status: "success"

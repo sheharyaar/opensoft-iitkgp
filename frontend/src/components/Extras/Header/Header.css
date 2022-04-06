@@ -1,0 +1,26 @@
+.Header__btn1 {
+  background-color: #7c2e41 !important;
+  color: #e5e5e5 !important;
+  border: transparent !important;
+  padding: 0.5em 1em !important;
+  border-radius: 0.75em !important;
+}
+.Header__btn2 {
+  background-color: #fef6f0 !important;
+  color: #7c2e41 !important;
+  border: transparent !important;
+  border-radius: 0.75em !important;
+  padding: 0.5em 1em !important;
+}
+.Header__title {
+  flex-grow: 0 !important;
+  padding: 0 60px !important;
+}
+
+.Header__nav {
+  flex-grow: 1 !important;
+}
+
+.Header__link {
+  text-decoration: none !important;
+}

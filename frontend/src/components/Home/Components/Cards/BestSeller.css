@@ -1,0 +1,31 @@
+.text--green {
+  color: #009f53 !important;
+}
+
+.text--grey {
+  color: #8b8b8b !important;
+}
+.BestSeller__price {
+  color: black !important;
+}
+.BestSeller__add {
+  background-color: #7c2e41 !important;
+  color: white !important;
+  float: right !important;
+  margin-right: 20px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  border-radius: 20px !important;
+}
+.BestSeller__info {
+  display: block !important;
+}
+.BestSeller__card {
+  width: 18%;
+  margin: 3% 1% !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}

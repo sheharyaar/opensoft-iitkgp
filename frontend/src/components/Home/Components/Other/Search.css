@@ -1,0 +1,10 @@
+.Search__btn{
+    display: inline-block !important;
+    flex-wrap: wrap !important;
+    color: #7C2E41 !important;
+    
+}
+.Search__bar{
+    display: inline !important;
+    float: left !important;
+}

@@ -1,0 +1,38 @@
+.Home__text {
+  text-align: left !important;
+  display: block !important;
+}
+
+.Home__textdiv {
+  text-align: left !important;
+  align-items: flex-start !important;
+  margin-left: 4em !important;
+  margin-right: 1em !important;
+  max-width: 80% !important;
+  justify-content: end !important;
+}
+
+.text--left {
+  text-align: left !important;
+}
+
+.Home__img {
+  height: 80vh !important;
+  border-radius: 1em !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  float: right !important;
+}
+.Home__div {
+  align-items: space-between !important;
+  display: inline-block !important;
+  background-color: #fef6f0;
+}
+
+.Home__grid {
+  display: flex !important;
+  grid-template-rows: auto max-content;
+  width: 100% !important;
+  padding-right: 2em !important;
+  background-color: #fef6f0;
+}

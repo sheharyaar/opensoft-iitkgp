@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "opensoft-backend.fullname" . }}
+  labels:
+    {{- include "opensoft-backend.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }} # Changes Here
+      targetPort: {{ .Values.service.port }}  # Changes Here
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "opensoft-backend.selectorLabels" . | nindent 4 }}

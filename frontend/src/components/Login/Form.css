@@ -1,0 +1,135 @@
+.form-container {
+  background-color: #fef7f1;
+  width: 100%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 10px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  font-size: 1.5rem;
+  z-index: 1;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-content-left {
+  border-radius: 10px 0 0 10px;
+  position: relative;
+}
+
+.form-img {
+  width: 650px;
+  height: relative;
+  position: absolute;
+}
+
+.form-success {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 80px;
+  color: #fff;
+}
+
+.form-content-right {
+  border-radius: 0 10px 10px 0;
+  position: relative;
+  margin-top: -3rem;
+  background: linear-gradient(90deg, #fef7f1 0%, #fef7f1 100%);
+}
+
+.form {
+  margin-top: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 91%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form h1 {
+  font-size: 1.75rem;
+  text-align: start;
+  width: 80%;
+  margin-bottom: 1rem;
+  color: #7f1f19;
+  text-align: center;
+}
+
+.form-inputs {
+  margin-bottom: 0.3rem;
+  width: 80%;
+}
+
+.form-inputs p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: #f00e0e;
+}
+
+.form-input {
+  display: block;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 100%;
+  border: 0px;
+  border-bottom: 2px solid rgb(104, 16, 16);
+}
+
+.form-input::placeholder {
+  color: #595959;
+  font-size: 15px;
+}
+
+.form-input-btn {
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #7f1f19 0%, #aa1106 100%);
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form-input-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, #8d221bdc 0%, #aa1106d3 100%);
+  transition: all 0.4s ease-out;
+}
+
+.form-input-login {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  color: #7f1f19;
+  width: 80%;
+  text-align: center;
+}
+
+.form-input-login a {
+  text-decoration: none;
+  color: #ff0a3fb6;
+  font-weight: 600;
+}
+
+.homenav {
+  margin-top: 3rem;
+}
+.homenav,
+a {
+  text-decoration: none;
+}
