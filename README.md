@@ -15,7 +15,7 @@ Abhishek Agrawal - [@Abhishek3101](https://github.com/Abhishek3101) \
 Hariom Vijay Chaudhari  - [@hariomvc](https://github.com/hariomvc) \
 Mohit Periwal - [@MohitP-2002](https://github.com/mohitp-2002) \
 Devansh Gupta - \
-Utkarsh Singh - 
+Utkarsh Singh - [@utkarshsinghinc](https://github.com/utkarshsinghinc)
 
 # Architecture
 
