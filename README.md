@@ -1,3 +1,24 @@
+## Winning Team
+
+_**Captain**_ \
+Nikhil Popli - [@nikhilpopli4900](https://github.com/nikhilpopli4900/) 
+
+_**Members**_ \
+Samir Kumar -[@SamK10](https://github.com/SamK10) \
+Rupinder Goyal - \
+Badrinath Gonnabattula - \
+Mohammad Shehar Yaar Tausif - [@sheharyaar](https://github.com/sheharyaar/) \
+Priyanshu Gautam - [@PriyanshuGautam1923](https://github.com/PriyanshuGautam1923) \
+Rishabh Jain - \
+Sandeep Mishra - [@sm745052](https://github.com/sm745052) \
+Abhishek Agrawal - [@Abhishek3101](https://github.com/Abhishek3101) \
+Hariom Vijay Chaudhari  - [@hariomvc](https://github.com/hariomvc) \
+Mohit Periwal - [@MohitP-2002](https://github.com/mohitp-2002) \
+Devansh Gupta - \
+Utkarsh Singh - 
+
+# Architecture
+
 ![architecture](https://github.com/nikhilpopli4900/final-opensoft/blob/main/infrasctructure/architecture.jpg)
 
 # Table of Contents
@@ -5,7 +26,7 @@
 * [1 Naming Conventions](#naming-conventions)
 * [2 Setting up Cloud Infrastructure](#setting-up-cloud-infrastructure)
     * [2.1 Setting up AWS Config, eksctl and kubectl](#setting-up-aws-config-eksctl-and-kubectl)
-    * [2.2 Creating cluster ](#creating-cluster-)
+    * [2.2 Creating cluster ](#creating-cluster)
     * [2.3 Setting up NGINX Ingress on EKS using Helm Charts](#setting-up-nginx-ingress-on-eks-using-helm-charts)
     * [2.4 Setting up Backend and Frontend on EKS using Helm Charts](#setting-up-backend-and-frontend-on-eks-using-helm-charts)
     * [2.5 Setting up Prometheus and Grafana on EKS](#setting-up-prometheus-and-grafana-on-eks)
