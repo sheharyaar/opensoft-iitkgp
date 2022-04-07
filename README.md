@@ -6,16 +6,18 @@ Nikhil Popli - [@nikhilpopli4900](https://github.com/nikhilpopli4900/)
 _**Members**_ \
 Samir Kumar -[@SamK10](https://github.com/SamK10) \
 Rupinder Goyal - \
-Badrinath Gonnabattula - \
+Badrinath Gonnabattula - [@Badrinath-Gonnabattula](https://github.com/badrinath-gonnabattula) \
 Mohammad Shehar Yaar Tausif - [@sheharyaar](https://github.com/sheharyaar/) \
 Priyanshu Gautam - [@PriyanshuGautam1923](https://github.com/PriyanshuGautam1923) \
-Rishabh Jain - \
+Rishabh Jain - [@Ragnarish2300](https://github.com/ragnarish2300) \
 Sandeep Mishra - [@sm745052](https://github.com/sm745052) \
 Abhishek Agrawal - [@Abhishek3101](https://github.com/Abhishek3101) \
 Hariom Vijay Chaudhari  - [@hariomvc](https://github.com/hariomvc) \
 Mohit Periwal - [@MohitP-2002](https://github.com/mohitp-2002) \
-Devansh Gupta - \
+Devansh Gupta - [@whitiger26](https://github.com/whitiger26) \
 Utkarsh Singh - [@utkarshsinghinc](https://github.com/utkarshsinghinc)
+
+:information_source: For overall documentation read pdf : [Documentation for Opensoft](./documentation-opensoft.pdf)
 
 # Architecture
 
