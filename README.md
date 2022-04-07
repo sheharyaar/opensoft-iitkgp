@@ -5,7 +5,7 @@ Nikhil Popli - [@nikhilpopli4900](https://github.com/nikhilpopli4900/)
 
 _**Members**_ \
 Samir Kumar -[@SamK10](https://github.com/SamK10) \
-Rupinder Goyal - \
+Rupinder Goyal - [@rupinderg00](https://github.com/rupinderg00)\
 Badrinath Gonnabattula - [@Badrinath-Gonnabattula](https://github.com/badrinath-gonnabattula) \
 Mohammad Shehar Yaar Tausif - [@sheharyaar](https://github.com/sheharyaar/) \
 Priyanshu Gautam - [@PriyanshuGautam1923](https://github.com/PriyanshuGautam1923) \
