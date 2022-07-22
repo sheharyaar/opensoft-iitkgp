@@ -1,4 +1,4 @@
-![architecture](https://github.com/nikhilpopli4900/final-opensoft/blob/main/infrasctructure/architecture.jpg)
+![architecture](./architecture.jpg)
 
 The directory structure of this document is as follows :
 

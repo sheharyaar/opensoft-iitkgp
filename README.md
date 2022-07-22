@@ -21,7 +21,7 @@ Utkarsh Singh - [@utkarshsinghinc](https://github.com/utkarshsinghinc)
 
 # Architecture
 
-![architecture](https://github.com/nikhilpopli4900/final-opensoft/blob/main/infrasctructure/architecture.jpg)
+![architecture](./infrasctructure/architecture.jpg)
 
 # Table of Contents
 
